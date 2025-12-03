@@ -10,8 +10,8 @@ WORKDIR /app
 # Copiar arquivos de dependências
 COPY package*.json ./
 
-# Instalar dependências
-RUN npm ci --only=production=false
+# Instalar dependências (incluindo devDependencies para build)
+RUN npm ci
 
 # Copiar código fonte
 COPY . .
