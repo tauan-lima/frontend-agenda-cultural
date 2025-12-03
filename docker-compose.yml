@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Configure a URL da API aqui ou use variável de ambiente
+        - VITE_API_URL=${VITE_API_URL:-http://localhost:3000/api}
+    container_name: agenda-cultural-frontend
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - agenda-cultural-network
+
+networks:
+  agenda-cultural-network:
+    driver: bridge
+

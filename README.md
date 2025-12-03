@@ -126,11 +126,37 @@ O sistema inclui interceptors automáticos para:
 - `npm run preview` - Preview do build de produção
 - `npm run lint` - Executa o linter
 
+## 🐳 Docker
+
+O projeto inclui configuração Docker para facilitar o deploy. Veja [DOCKER.md](./DOCKER.md) para instruções detalhadas.
+
+### Execução Rápida com Docker
+
+```bash
+# Usando Docker Compose (recomendado)
+docker-compose up -d
+
+# A aplicação estará disponível em http://localhost:3000
+```
+
+### Build e Deploy
+
+```bash
+# Build da imagem
+docker build -t agenda-cultural-frontend .
+
+# Executar container
+docker run -d -p 3000:80 --name agenda-cultural-frontend agenda-cultural-frontend
+```
+
+Para mais informações, consulte [DOCKER.md](./DOCKER.md).
+
 ## 📝 Notas
 
 - A aplicação espera uma API backend rodando em `http://localhost:3000/api`
 - Certifique-se de que o backend está configurado e rodando antes de iniciar o frontend
 - As rotas protegidas redirecionam automaticamente para `/login` se o usuário não estiver autenticado
+- Para produção, configure a variável `VITE_API_URL` com a URL do seu backend
 
 ## 🤝 Contribuindo
 
