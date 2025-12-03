@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Users, Calendar, CheckCircle, XCircle } from 'lucide-react';
+import { Users, Calendar, CheckCircle, XCircle, BarChart3 } from 'lucide-react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { promotersService } from '../services/api/promoters';
 import { eventosService } from '../services/api/eventos';
@@ -9,6 +9,7 @@ import { Card } from '../components/ui/Card';
 import { Skeleton } from '../components/ui/Skeleton';
 import { EmptyState } from '../components/ui/EmptyState';
 import { Modal } from '../components/ui/Modal';
+import { DashboardAdminPage } from './DashboardAdminPage';
 import toast from 'react-hot-toast';
 import './AdminPage.css';
 
@@ -21,6 +22,13 @@ export const AdminPage = () => {
         <aside className="admin-sidebar">
           <h2>Painel Admin</h2>
           <nav className="admin-nav">
+            <Link
+              to="/admin/dashboard"
+              className={`admin-nav-link ${location.pathname === '/admin' || location.pathname === '/admin/' || location.pathname.includes('/dashboard') ? 'active' : ''}`}
+            >
+              <BarChart3 size={20} />
+              Dashboard
+            </Link>
             <Link
               to="/admin/promoters"
               className={`admin-nav-link ${location.pathname.includes('/promoters') ? 'active' : ''}`}
@@ -40,9 +48,10 @@ export const AdminPage = () => {
 
         <main className="admin-content">
           <Routes>
+            <Route path="/dashboard" element={<DashboardAdminPage />} />
             <Route path="/promoters" element={<PromotersPendentes />} />
             <Route path="/eventos" element={<EventosPendentes />} />
-            <Route path="/" element={<PromotersPendentes />} />
+            <Route path="/" element={<DashboardAdminPage />} />
           </Routes>
         </main>
       </div>

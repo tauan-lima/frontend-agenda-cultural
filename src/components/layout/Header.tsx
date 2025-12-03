@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, Calendar, Heart, Settings, Plus } from 'lucide-react';
+import { Menu, X, User, LogOut, Calendar, Heart, Settings, Plus, BarChart3 } from 'lucide-react';
 import { useAuthStore } from '../../stores/authStore';
 import { canCreateEvents, isAdmin } from '../../utils/userHelpers';
 import { Button } from '../ui/Button';
@@ -106,12 +106,12 @@ export const Header = () => {
                   </Link>
                   {userIsAdmin && (
                     <Link
-                      to="/admin"
+                      to="/admin/dashboard"
                       className="header-dropdown-item"
                       onClick={() => setUserMenuOpen(false)}
                     >
-                      <User size={16} />
-                      Painel Admin
+                      <BarChart3 size={16} />
+                      Dashboard Admin
                     </Link>
                   )}
                   <div className="header-dropdown-divider" />
