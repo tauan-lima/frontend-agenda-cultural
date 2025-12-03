@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { authService } from '../services/api/auth';
 import { promotersService } from '../services/api/promoters';
-import type { User, LoginResponseAPI, UserAPI } from '../types';
+import type { User, UserAPI } from '../types';
 import toast from 'react-hot-toast';
 
 // Função para normalizar dados da API para formato interno

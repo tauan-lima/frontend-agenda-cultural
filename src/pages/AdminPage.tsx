@@ -175,9 +175,8 @@ const EventosPendentes = () => {
     queryFn: () => eventosService.getEventosPendentes(),
   });
 
-  // Extrair eventos e paginação da resposta
+  // Extrair eventos da resposta
   const eventos = eventosData?.events || [];
-  const pagination = eventosData?.pagination;
 
   const aprovarMutation = useMutation({
     mutationFn: (id: string) => eventosService.aprovarEvento(id),

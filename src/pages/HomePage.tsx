@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Search, Calendar as CalendarIcon, MapPin, Users, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { formatDate, isEventPast } from '../utils/dateHelpers';
@@ -19,10 +19,9 @@ import './HomePage.css';
 export const HomePage = () => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const [searchParams] = useSearchParams();
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
-  const { isAuthenticated, user } = useAuthStore();
+  const { isAuthenticated } = useAuthStore();
 
   // Carregar eventos salvos e inscrições do usuário
   const { data: eventosSalvosData } = useQuery({

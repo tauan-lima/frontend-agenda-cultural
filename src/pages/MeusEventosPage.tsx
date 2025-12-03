@@ -39,9 +39,8 @@ export const MeusEventosPage = () => {
     enabled: !!user?.id,
   });
 
-  // Extrair eventos e paginação da resposta
+  // Extrair eventos da resposta
   const eventos = eventosData?.events || [];
-  const pagination = eventosData?.pagination;
 
   const tabs = [
     { id: 'all', label: 'Todos' },

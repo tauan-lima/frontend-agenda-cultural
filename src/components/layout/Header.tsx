@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, Calendar, Heart, Settings, Plus, BarChart3 } from 'lucide-react';
+import { Menu, X, LogOut, Calendar, Heart, Settings, Plus, BarChart3 } from 'lucide-react';
 import { useAuthStore } from '../../stores/authStore';
 import { canCreateEvents, isAdmin } from '../../utils/userHelpers';
 import { Button } from '../ui/Button';
