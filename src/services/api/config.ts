@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api', // Usa proxy do Nginx
+  baseURL: 'http://x4ock88oowgokwsgsw8swo4g.94.72.124.156.sslip.io/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -34,7 +34,7 @@ api.interceptors.response.use(
         const refreshToken = localStorage.getItem('refreshToken');
         if (refreshToken) {
           const response = await axios.post(
-            '/api/auth/refresh',
+            'http://x4ock88oowgokwsgsw8swo4g.94.72.124.156.sslip.io/api/auth/refresh',
             { refreshToken }
           );
 
