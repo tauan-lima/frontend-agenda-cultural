@@ -1,0 +1,185 @@
+.meus-eventos-page {
+  padding: var(--spacing-5xl) var(--spacing-lg);
+  min-height: calc(100vh - 200px);
+}
+
+.meus-eventos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.meus-eventos-header h1 {
+  font-size: 32px;
+}
+
+.meus-eventos-tabs {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-3xl);
+  border-bottom: 1px solid var(--border);
+}
+
+.meus-eventos-tab {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.meus-eventos-tab:hover {
+  color: var(--text-primary);
+}
+
+.meus-eventos-tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-2xl);
+}
+
+.evento-card-promoter {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.evento-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--surface);
+}
+
+.evento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.evento-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface);
+  color: var(--text-secondary);
+}
+
+.evento-status-badge {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+}
+
+.evento-status-approved {
+  background-color: rgba(16, 185, 129, 0.9);
+  color: white;
+}
+
+.evento-status-pending {
+  background-color: rgba(245, 158, 11, 0.9);
+  color: white;
+}
+
+.evento-status-rejected,
+.evento-status-cancelled {
+  background-color: rgba(239, 68, 68, 0.9);
+  color: white;
+}
+
+.evento-content {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  flex: 1;
+}
+
+.evento-title {
+  font-size: 20px;
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+}
+
+.evento-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.evento-info-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.evento-info-item svg {
+  flex-shrink: 0;
+}
+
+.evento-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.evento-actions button {
+  flex: 1;
+  min-width: 100px;
+}
+
+.evento-rejection-reason {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left: 3px solid var(--error);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.evento-rejection-reason strong {
+  color: var(--error);
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+@media (max-width: 768px) {
+  .meus-eventos-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+  }
+
+  .meus-eventos-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .eventos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

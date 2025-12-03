@@ -1,0 +1,138 @@
+.admin-page {
+  padding: var(--spacing-5xl) var(--spacing-lg);
+  min-height: calc(100vh - 200px);
+}
+
+.admin-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--spacing-3xl);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.admin-sidebar {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  height: fit-content;
+  position: sticky;
+  top: calc(var(--spacing-lg) + 80px);
+}
+
+.admin-sidebar h2 {
+  font-size: 20px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-base);
+}
+
+.admin-nav-link:hover {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.admin-nav-link.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+.admin-content h1 {
+  font-size: 32px;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.admin-item {
+  padding: var(--spacing-lg);
+}
+
+.admin-item-content {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--spacing-lg);
+  align-items: start;
+}
+
+.admin-item-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.admin-item-details {
+  flex: 1;
+}
+
+.admin-item-details h3 {
+  font-size: 20px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.admin-item-details p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.admin-item-meta {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.admin-item-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  min-width: 150px;
+}
+
+@media (max-width: 1024px) {
+  .admin-container {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    position: static;
+  }
+
+  .admin-nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .admin-item-content {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-item-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .admin-item-actions {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
